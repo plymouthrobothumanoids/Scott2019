@@ -1,0 +1,241 @@
+<?xml version="1.0" ?>
+<robot name="gummi" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+	<xacro:macro name="build_leg_urdf" params="prefix reflect">
+
+		<link name="${prefix}_leg_L1">
+			<inertial>
+				<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				<mass value="0"/>
+				<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+			</inertial>
+			<visual>
+				<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				<geometry>
+					<mesh filename="package://scott_description/meshes/${prefix}_leg/link1.stl"/>
+				</geometry>
+				<material name="">
+					<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+				</material>
+			</visual>
+			<collision>
+				<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				<geometry>
+					<mesh filename="package://scott_description/meshes/${prefix}_leg/link1.stl"/>
+				</geometry>
+			</collision>
+		</link>
+
+
+		<link name="${prefix}_leg_L2">
+			<inertial>
+				<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				<mass value="0"/>
+				<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+			</inertial>
+			<visual>
+				<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				<geometry>
+					<mesh filename="package://scott_description/meshes/${prefix}_leg/link2.stl"/>
+				</geometry>
+				<material name="">
+					<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+				</material>
+			</visual>
+			<collision>
+				<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				<geometry>
+					<mesh filename="package://scott_description/meshes/${prefix}_leg/link2.stl"/>
+				</geometry>
+			</collision>
+		</link>
+
+
+
+		<link name="${prefix}_leg_L3">
+			<inertial>
+				<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				<mass value="0"/>
+				<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+			</inertial>
+			<visual>
+				<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				<geometry>
+					<mesh filename="package://scott_description/meshes/${prefix}_leg/link3.stl"/>
+				</geometry>
+				<material name="">
+					<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+				</material>
+			</visual>
+			<collision>
+				<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				<geometry>
+					<mesh filename="package://scott_description/meshes/${prefix}_leg/link3.stl"/>
+				</geometry>
+			</collision>
+		</link>
+
+
+		<link name="${prefix}_leg_L4">
+			<inertial>
+				<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				<mass value="0"/>
+				<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+			</inertial>
+			<visual>
+				<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				<geometry>
+					<mesh filename="package://scott_description/meshes/${prefix}_leg/link4.stl"/>
+				</geometry>
+				<material name="">
+					<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+				</material>
+			</visual>
+			<collision>
+				<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				<geometry>
+					<mesh filename="package://scott_description/meshes/${prefix}_leg/link4.stl"/>
+				</geometry>
+			</collision>
+		</link>
+
+
+		<link name="${prefix}_leg_L5">
+			<inertial>
+				<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				<mass value="0"/>
+				<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+			</inertial>
+			<visual>
+				<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				<geometry>
+					<mesh filename="package://scott_description/meshes/${prefix}_leg/link5.stl"/>
+				</geometry>
+				<material name="">
+					<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+				</material>
+			</visual>
+			<collision>
+				<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				<geometry>
+					<mesh filename="package://scott_description/meshes/${prefix}_leg/link5.stl"/>
+				</geometry>
+			</collision>
+		</link>
+
+
+		<link name="${prefix}_leg_L6">
+			<inertial>
+				<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				<mass value="0"/>
+				<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+			</inertial>
+			<visual>
+				<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				<geometry>
+					<mesh filename="package://scott_description/meshes/${prefix}_leg/link6.stl"/>
+				</geometry>
+				<material name="">
+					<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+				</material>
+			</visual>
+			<collision>
+				<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				<geometry>
+					<mesh filename="package://scott_description/meshes/${prefix}_leg/link6.stl"/>
+				</geometry>
+			</collision>
+		</link>
+
+
+		<link name="${prefix}_foot">
+			<inertial>
+				<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				<mass value="0"/>
+				<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+			</inertial>
+			<visual>
+				<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				<geometry>
+					<mesh filename="package://scott_description/meshes/${prefix}_leg/foot.stl"/>
+				</geometry>
+				<material name="">
+					<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+				</material>
+			</visual>
+			<collision>
+				<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				<geometry>
+					<mesh filename="package://scott_description/meshes/${prefix}_leg/foot.stl"/>
+				</geometry>
+			</collision>
+		</link>
+
+
+		<!-- Joints -->
+
+		<joint name="${prefix}_leg_J1" type="continuous">
+			<origin rpy="0.0 0.0 0.0" xyz="${reflect*0.0205} -0.0275 0.0135"/>
+			<parent link="${prefix}_leg_L1"/>
+			<child  link="${prefix}_leg_L2"/>
+			<axis xyz="0.0 1.0 0.0"/>
+			<limit effort="0" lower="-1" upper="1" velocity="0"/>
+		</joint>
+
+
+		<joint name="${prefix}_leg_J2" type="continuous">
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 -0.0390 -0.0280"/>
+			<parent link="${prefix}_leg_L2"/>
+			<child link="${prefix}_leg_L3"/>
+			<axis xyz="0.0 0.0 -1.0"/>
+			<limit effort="0" lower="-1" upper="1" velocity="0"/>
+		</joint>
+
+
+		<joint name="${prefix}_leg_J3" type="continuous">
+			<origin rpy="0.0 0.0 0.0" xyz="${-1*reflect*0.0305} 0.0 0.0350"/>
+			<parent link="${prefix}_leg_L3"/>
+			<child link="${prefix}_leg_L4"/>
+			<axis xyz="-1.0 0.0 0.0"/>
+			<limit effort="0" lower="-1" upper="1" velocity="0"/>
+		</joint>
+
+
+		<joint name="${prefix}_leg_J4" type="continuous">
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 -0.2011 -0.0106"/>
+			<parent link="${prefix}_leg_L4"/>
+			<child link="${prefix}_leg_L5"/>
+			<axis xyz="1.0 0.0 0.0"/>
+			<limit effort="0" lower="-1" upper="1" velocity="0"/>
+		</joint>
+
+
+		<joint name="${prefix}_leg_J5" type="continuous">
+			<origin rpy="0.0 0.0 0.0" xyz="${reflect*0.00102} -0.2074 -0.0419"/>
+			<parent link="${prefix}_leg_L5"/>
+			<child link="${prefix}_leg_L6"/>
+			<axis xyz="1.0 0.0 0.0"/>
+			<limit effort="0" lower="-1" upper="1" velocity="0"/>
+		</joint>
+
+		<!-- Need to compensate for variations of left/right foot joint origin -->
+		<xacro:property name="var_1" value="0.0750"/>
+
+		<xacro:if value="${prefix == 'right'}">
+			<xacro:property name="var_1" value="-0.0320"/>
+		</xacro:if>
+
+		<joint name="${prefix}_leg_J6" type="continuous">
+			<origin rpy="0.0 0.0 0.0" xyz="${reflect*0.0295} 0.0 ${var_1}"/>
+			<parent link="${prefix}_leg_L6"/>
+			<child link="${prefix}_foot"/>
+			<axis xyz="0.0 0.0 -1.0"/>
+			<limit effort="0" lower="-1" upper="1" velocity="0"/>
+		</joint>
+
+	</xacro:macro>
+
+	<xacro:build_leg_urdf prefix="right" reflect="1"/>
+	<xacro:build_leg_urdf prefix="left" reflect="-1"/>
+
+</robot>

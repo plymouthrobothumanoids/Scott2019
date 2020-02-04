@@ -1,0 +1,75 @@
+<?xml version="1.0" ?>
+<robot name="gummi" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<link name="base_link"/>
+  <joint name="set_worldaxis" type="fixed">
+    <origin rpy="1.570796326795 0 0" xyz="0.0 0.0 0.5199899999999991"/>
+    <parent link="base_link"/>
+    <child link="torso"/>
+    <axis xyz="0 0 0"/>
+    <limit effort="0" lower="-1" upper="1" velocity="0"/>
+  </joint>	
+
+
+	<link name="torso">
+		<inertial>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			<mass value="0"/>
+			<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+		</inertial>
+		<visual>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			<geometry>
+				<mesh filename="package://scott_description/meshes/torso.stl"/>
+			</geometry>
+			<material name="">
+				<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+			</material>
+		</visual>
+		<collision>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			<geometry>
+				<mesh filename="package://scott_description/meshes/torso.stl"/>
+			</geometry>
+		</collision>
+	</link>
+
+
+	<!-- Begin macro here so there is only one instance of torso link generated -->
+
+
+	<xacro:macro name="attach_limbs" params="prefix reflect">
+
+
+		<xacro:property name="var_1" value="0.0"/>
+
+		<xacro:if value="${prefix == 'left'}">
+			<xacro:property name="var_1" value="-0.0712083"/>
+		</xacro:if>
+
+
+	<!-- Joints to limbs -->
+
+		<joint name="torso_to_${prefix}_leg" type="fixed">
+			<!-- <origin rpy="0.0 0.0 0.0" xyz="${reflect*0.0356} 0.0 -0.0130"/> -->
+			<origin rpy="0.0 0.0 0.0" xyz="${var_1} 0.0 0.0"/>
+			<parent link="torso"/>
+			<child link="${prefix}_leg_L1"/>
+			<axis xyz="0 0 0"/>
+			<limit effort="0" lower="-1" upper="1" velocity="0"/>
+		</joint>
+
+		<!-- USE THE REFLECT MACRO TO JUST MIRROR THE RIGHT LEG -->
+		<!-- http://wiki.ros.org/urdf/Tutorials/Using%20Xacro%20to%20Clean%20Up%20a%20URDF%20File#Leg_macro -->
+
+
+
+	</xacro:macro>
+
+	<!-- Need to place joint in the middle of torso to cleanly reflect limbs! -->
+
+	<xacro:attach_limbs prefix="right" reflect="-1"/>
+	<xacro:attach_limbs prefix="left"  reflect="-1"/>
+
+
+</robot>
