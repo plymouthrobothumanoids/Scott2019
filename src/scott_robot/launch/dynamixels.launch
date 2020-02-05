@@ -3,7 +3,7 @@
 <launch>
     
     <!-- Locate urdf for the pan tilt camera -->
-    <param name="robot_description" textfile='$(find football_description)/urdf/scott_urdf.urdf' />
+    <param name="robot_description" textfile='$(find scott_description)/urdf/scott_assembled.urdf' />
 
     <!-- Start controller manager -->
     <include file="$(find scott_robot)/launch/controller_manager.launch" />
