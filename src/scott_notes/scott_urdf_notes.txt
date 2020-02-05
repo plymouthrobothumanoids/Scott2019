@@ -1,0 +1,6 @@
+URDF generator can only create single-branch-trees
+To ensure high-fidelity IRDF assembly when combining limb urdfs to torso:
+	-> user fake limbs when generating torso urdf (with "base" starting at one of the limbs, then "grow" the tree through toso to other limb)
+	-> user fake torso when generating limb urdfs
+This fakery is needed so that the joints connecting the limbs to the torso are the same for each urdf generated (makes it easier to combine serperate urdfs with xacro)
+When making the limb urdf, use the fake torso as the "base"
