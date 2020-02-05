@@ -1,0 +1,38 @@
+LA1_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: LA1
+    joint_speed: 0.6
+    motor:
+        id: 2
+        init: 2048
+        min: 0
+        max: 4096
+
+LA2_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: LA2
+    joint_speed: 0.6
+    motor:
+        id: 4
+        init: 2048
+        min: 1048
+        max: 3161
+
+LA3_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: LA3
+    joint_speed: 1
+    motor:
+        id: 6
+        init: 2048
+        min: 190
+        max: 2172

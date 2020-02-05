@@ -1,0 +1,38 @@
+RA1_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: RA1
+    joint_speed: 0.6
+    motor:
+        id: 1
+        init: 2048
+        min: 0
+        max: 4096
+
+RA2_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: RA2
+    joint_speed: 0.6
+    motor:
+        id: 3
+        init: 2048
+        min: 1100
+        max: 3078
+
+RA3_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: RA3
+    joint_speed: 1
+    motor:
+        id: 5
+        init: 2048
+        min: 1914
+        max: 3906

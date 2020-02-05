@@ -1,0 +1,51 @@
+<!-- -*- mode: XML -*- -->
+
+
+<launch>
+    <!-- Start right arm tilt joint controller -->
+    <rosparam file="$(find scott_robot)/yamls/RA_tilt.yaml" command="load"/>
+    <node name="RArm_controller_spawner" pkg="dynamixel_controllers" type="controller_spawner.py"
+          args="--manager=dxl_manager
+                --port limb_1_port
+                RA1_controller
+		RA2_controller
+		RA3_controller"
+          output="screen"/>
+
+    <!-- Start left arm tilt joint controller -->
+    <rosparam file="$(find scott_robot)/yamls/LA_tilt.yaml" command="load"/>
+    <node name="LArm_controller_spawner" pkg="dynamixel_controllers" type="controller_spawner.py"
+          args="--manager=dxl_manager
+                --port limb_2_port
+                LA1_controller
+		LA2_controller
+		LA3_controller"
+          output="screen"/>
+
+    <!-- Start right leg tilt joint controller -->
+    <rosparam file="$(find scott_robot)/yamls/RL_tilt.yaml" command="load"/>
+    <node name="RLeg_controller_spawner" pkg="dynamixel_controllers" type="controller_spawner.py"
+          args="--manager=dxl_manager
+                --port limb_3_port
+                RL1_controller
+		RL2_controller
+		RL3_controller
+		RL4_controller
+		RL5_controller
+		RL6_controller"
+          output="screen"/>
+
+    <!-- Start left leg tilt joint controller -->
+    <rosparam file="$(find scott_robot)/yamls/LL_tilt.yaml" command="load"/>
+    <node name="LLeg_controller_spawner" pkg="dynamixel_controllers" type="controller_spawner.py"
+          args="--manager=dxl_manager
+                --port limb_4_port
+                LL1_controller
+		LL2_controller
+		LL3_controller
+		LL4_controller
+		LL5_controller
+		LL6_controller"
+          output="screen"/>
+</launch>
+

@@ -1,0 +1,40 @@
+<!-- -*- mode: XML -*- -->
+
+<launch>
+    
+    <!-- Locate urdf for the pan tilt camera -->
+    <param name="robot_description" textfile='$(find football_description)/urdf/scott_urdf.urdf' />
+
+    <!-- Start controller manager -->
+    <include file="$(find scott_robot)/launch/controller_manager.launch" />
+
+    <!-- Start tilt joint controller -->
+    <include file="$(find scott_robot)/launch/start_tilt_controller.launch" />
+
+    <!-- Start the Dynamixel Joint States Publisher -->
+    <rosparam param="joints">
+    - "RA1_controller" 
+    - "RA2_controller"
+    - "RA3_controller"
+    - "LA1_controller"
+    - "LA2_controller"
+    - "LA3_controller"
+    - "RL1_controller"
+    - "RL2_controller"
+    - "RL3_controller"
+    - "RL4_controller"
+    - "RL5_controller"
+    - "RL6_controller"
+    - "LL1_controller"
+    - "LL2_controller"
+    - "LL3_controller"
+    - "LL4_controller"
+    - "LL5_controller"
+    - "LL6_controller"
+    </rosparam>
+    <node name="dynamixel_joint_states_publisher" pkg="scott_robot" type="dynamixel_joint_state_publisher.py" output="screen"></node>
+
+    <!-- Start the robot state publisher -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+
+</launch>
