@@ -1,0 +1,77 @@
+RL1_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: right_leg_J1
+    joint_speed: 0.6
+    motor:
+        id: 7
+        init: 2048
+        min: 1285
+        max: 2831
+
+RL2_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: right_leg_J2
+    joint_speed: 0.6
+    motor:
+        id: 9
+        init: 2048
+        min: 1697
+        max: 2351
+
+RL3_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: right_leg_J3
+    joint_speed: 1
+    motor:
+        id: 11
+        init: 2048
+        min: 836
+        max: 3301
+
+RL4_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: right_leg_J4
+    joint_speed: 0.6
+    motor:
+        id: 13
+        init: 2048
+        min: 425
+        max: 2056
+
+RL5_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: right_leg_J5
+    joint_speed: 0.6
+    motor:
+        id: 15
+        init: 2048
+        min: 845
+        max: 3016
+
+RL6_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: right_leg_J6
+    joint_speed: 1
+    motor:
+        id: 17
+        init: 2048
+        min: 1722
+        max: 2370

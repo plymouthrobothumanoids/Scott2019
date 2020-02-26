@@ -1,0 +1,34 @@
+<!-- -*- mode: XML -*- -->
+
+<launch>
+    <node name="dynamixel_manager" pkg="dynamixel_controllers" type="controller_manager.py" required="true" output="screen">
+        <rosparam>
+            namespace: dxl_manager
+            serial_ports:
+                limb_1_port:
+                    port_name: "/dev/ttyUSB0"
+                    baud_rate: 1000000
+                    min_motor_id: 1
+                    max_motor_id: 25
+                    update_rate: 20
+                limb_2_port:
+                    port_name: "/dev/ttyUSB1"
+                    baud_rate: 1000000
+                    min_motor_id: 1
+                    max_motor_id: 25
+                    update_rate: 20
+                limb_3_port:
+                    port_name: "/dev/ttyUSB2"
+                    baud_rate: 1000000
+                    min_motor_id: 1
+                    max_motor_id: 25
+                    update_rate: 20
+                limb_4_port:
+                    port_name: "/dev/ttyUSB3"
+                    baud_rate: 1000000
+                    min_motor_id: 1
+                    max_motor_id: 25
+                    update_rate: 20 
+        </rosparam>
+    </node>
+</launch>
