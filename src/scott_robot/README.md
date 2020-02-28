@@ -1,99 +1,102 @@
-# Scott Robot Manual
+# Scott Robot Manual  
 
-## Installation Guide
+## Installation Guide  
 
-* Open a terminal an digit:
-
-```shell
-cd ~
-git clone https:/github.com/plymouthrobothumanoids/Scott2019.git
-```
-
-* Compile the packages using catkin_make
+* Open a terminal an digit: 
 
 ```shell
-cd ~/Scott2019
-catkin_make
+cd ~ 
+git clone https:/github.com/plymouthrobothumanoids/Scott2019.git 
 ```
+ 
+* Compile the packages using catkin_make 
 
-## Usage guide
+```shell 
+cd ~/Scott2019 
+catkin_make 
+``` 
 
-* Open a terminal and start roscore
+## Usage guide   
 
-```shell
-roscore
-```
+* Open a terminal and start roscore 
 
-* Open a new termianl tab for running the dynamixel controller/s
+```shell 
+roscore 
+``` 
 
-First the robot packages need to be sourced. Digit:
+* Open a new terminal tab for running the dynamixel controller/s 
 
-```shell
-source ~/Scott2019/devel/setup.bash
-```
+First the robot packages need to be sourced. Digit: 
 
-* Use one of the two controller methods for controlling the dynamixels.
+```shell 
+source ~/Scott2019/devel/setup.bash 
+``` 
 
-1. Method one (single controller method)
+* Use one of the two controller methods for controlling the dynamixels. 
 
-This method launches both parts of the controller system at once. This is useful when all dynamixels are known and wanting to be controlled.
+1. Method one (single controller method) 
 
-Digit:
+This method launches both parts of the controller system at once. This is useful when all dynamixels are known and wanting to be controlled. 
 
-```shell
-roslaunch scott_robot dynamixels.launch
-```
+Digit: 
 
-2. Method two (dual controller method)
+```shell 
+roslaunch scott_robot dynamixels.launch 
+``` 
 
-This method uses one launch file to start the controller manager and a seperate launch file generate controllers for each dynamixel. The first launch file can be used on it's own to determine what dynamixels have been detected and what IDs they have assigned to them.
+2. Method two (dual controller method) 
 
-Digit:
+This method uses one launch file to start the controller manager and a separate launch file generate controllers for each dynamixel. The first launch file can be used on its own to determine what dynamixels have been detected and what IDs they have assigned to them. 
 
-```shell
-roslaunch scott_robot controller_manager.launch
-```
-Then open a new tab, source the package, and digit:
+Digit: 
 
-```shell
-roslaunch scott_robot start_tilt_controller.launch
-```
+```shell 
+roslaunch scott_robot controller_manager.launch 
+``` 
 
-If /dev/ttyUSB0 can't be found then the U2D2 may have mounted to a different port. If this is the case then you will need to change the port in the dynamixel.launch file to the port that the U2D2 is mounted to. If you are denied access to /dev/ttyUSB0 then you will need to run 
-```shell
-sudo usermod -a -G dialout ${USER}
-```
-and then restart the computer for the changes to take affect. 
+Then open a new tab, source the package, and digit: 
 
-* Run movement script
+```shell 
+roslaunch scott_robot start_tilt_controller.launch 
+``` 
 
-Two scripts are included, one for setting the robot in a standing position and another for having the robot stand and wave.
-New scripts can be created to control the robot in any way that it is physically possible to do so.
+If /dev/ttyUSB0 can't be found, then the U2D2 may have mounted to a different port. If this is the case then you will need to change the port in the dynamixel.launch file to the port that the U2D2 is mounted to. If you are denied access to /dev/ttyUSB0 then you will need to run: 
 
-Script start example:
+```shell 
+sudo usermod -a -G dialout ${USER} 
+``` 
 
-```shell
-rosrun scott_robot mainStand.py
-```
+and then restart the computer for the changes to take effect. 
 
-Scripts need to be put in the "scripts" folder to be located by ros and be set to be executable inorder to use rosrun.
+* Run movement script 
 
-This can be done with:
+Two scripts are included, one for setting the robot in a standing position and another for having the robot stand and wave. 
+New scripts can be created to control the robot in any way that it is physically possible to do so. 
 
-```shell
-chmod +x <file_name.type>
-```
+Script start example: 
 
-## Additoanl commands
+```shell 
+rosrun scott_robot mainStand.py 
+``` 
 
-These are some additonal ros commands that may be useful for mannual control of the servos.
+Scripts need to be put in the "scripts" folder to be located by ros and be set to be executable in order to use rosrun. 
 
-* rostopic list - Lists all of the current ros topics
+This can be done with: 
+
+```shell 
+chmod +x <file_name.type> 
+``` 
+
+## Additional commands 
+
+These are some additional ros commands that may be useful for manual control of the servos. 
+
+* rostopic list - Lists all of the current ros topics 
 * rostopic echo <topic_name> - Outputs the current topic data 
-* rosnode list - Lists all of the current ros nodes
-* rostopic pub -1 /<joint_controller_name>/command std_msgs/Float64 -- <angle> - Sets a servo to a specific angle in radians
-* rostopic pub -1 <joint_controller_name>/set_speed <speed> - Sets the speed of a specific servo in radians per second
-* rostopic pub -1 <joint_controller_name>/torque_enable - Toggles the torque of a specific servo
+* rosnode list - Lists all of the current ros nodes 
+* rostopic pub -1 /<joint_controller_name>/command std_msgs/Float64 -- <angle> - Sets a servo to a specific angle in radians 
+* rostopic pub -1 <joint_controller_name>/set_speed <speed> - Sets the speed of a specific servo in radians per second 
+* rostopic pub -1 <joint_controller_name>/torque_enable - Toggles the torque of a specific servo 
 
 The full controller manager ros api can be found here: http://library.isr.ist.utl.pt/docs/roswiki/dynamixel_controllers.html 
 
